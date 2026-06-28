@@ -1,0 +1,495 @@
+<!DOCTYPE html> 
+<html>  
+<head>  
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">  
+  <title> Animation</title>  
+ 
+  <style>  
+  *{  
+  box-sizing: border-box;  
+  margin: 0;  
+  padding: 0;  
+}  
+:root {  
+            --primary: #4caf50;  
+            --bg-dark: #0f0f1a;  
+            --bg-card: #1a1a2e;  
+            --text: #e0e0e0;  
+            --radius: 12px;  
+            --transition: all 0.3s ease;  
+    --shadow: 0 10px 30px rgba(0,0,0,.3);  
+}  body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: var(--bg-dark);
+color: var(--text);
+line-height: 1.6;
+
+}
+
+.navbar {
+background-color: rgba(15, 15, 26, 0.95);
+backdrop-filter: blur(10px);
+padding: 1rem 0;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+}
+section {
+padding: 80px 0;
+}
+
+h2{  
+        font-size: 2.5rem;  
+        text-align: center;  
+        margin-bottom: 50px;  
+        position: relative;  
+        color: #fff;  
+    }  
+
+    h2::after {  
+        content: '';  
+        position: absolute;  
+        bottom: -10px;  
+        left: 50%;  
+        transform: translateX(-50%);  
+        width: 60px;  
+        height: 3px;  
+        background: var(--primary);  
+        border-radius: 2px;  
+    }
+.navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+width: 90%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+.logo {
+font-size: 1.5rem;
+font-weight: 700;
+color:  var(--text);
+text-decoration:none;
+}
+
+.logo span {
+color: var(--primary);
+}
+
+.nav-links {
+display: flex;
+list-style: none;
+gap: 30px;
+
+}
+
+.nav-link {
+color: var(--text);
+font-weight: 500;
+padding: 5px 0;
+position: relative;
+transition: var(--transition);
+font-size: 1rem;
+justify-content:space-between;
+display:flex;
+text-decoration:none;
+}
+.nav-link:hover {
+color: var(--primary);
+}
+.hero {
+padding-top: 140px;
+padding-bottom: 60px;
+text-align: center;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: radial-gradient(ellipse at center, rgba(76, 175, 80, 0.05) 0%, transparent 70%);
+}
+.hero-content {
+max-width: 800px;
+}
+
+.hero-title {  
+        font-size: 3.5rem;  
+        font-weight: 700;  
+        color: #fff;  
+        margin-bottom: 15px;  
+        animation: fadeInUp 0.8s ease-out 0.2s both;  
+    }  
+
+    .hero-title .highlight {  
+        color: var(--primary);  
+    }  
+
+    .hero-subtitle {  
+        font-size: 1.3rem;  
+        color: var(--text);  
+        margin-bottom: 20px;  
+        animation: fadeInUp 0.8s ease-out 0.5s both;  
+    }  
+
+    .hero-description {  
+        font-size: 1.1rem;  
+        color: #aaa;  
+        max-width: 600px;  
+        margin: 0 auto 30px;  
+        animation: fadeInUp 0.8s ease-out 0.8s both;  
+    }  
+    @keyframes fadeInUp {  
+        from {  
+            opacity: 0;  
+            transform: translateY(30px);  
+        }  
+        to {  
+            opacity: 1;  
+            transform: translateY(0);  
+        }  
+    }  
+    .hero-bottom {  
+        display: flex;  
+        gap: 15px;  
+        justify-content: center;  
+        flex-wrap: wrap;  
+        animation: fadeInUp 0.8s ease-out 1.1s both;  
+    }  
+
+    .bottom-1, .bottom-2, .bottom-3{  
+        padding: 12px 30px;  
+        border-radius: 50px;  
+        font-weight: 600;  
+        border: none;  
+        cursor: pointer;  
+        transition: var(--transition);  
+        font-size: 1rem;  
+        text-decoration:none;  
+    }  
+
+    .bottom-1 {  
+        background: var(--primary);  
+        color: #fff;  
+    }  
+
+    .bottom-1:hover {  
+        background: #43a047;  
+        transform: translateY(-2px);  
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);  
+    }  
+
+    .bottom-2{  
+        background: transparent;  
+        color: #fff;  
+        border: 2px solid var(--primary);  
+    }  
+
+    .bottom-2:hover {  
+        background: var(--primary);  
+        transform: translateY(-2px);  
+    }
+
+.skills-section, .projects-section, .contact-section {
+padding: 80px 0;
+}
+
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+}
+
+.skill-card {
+background: var(--bg-card);
+padding: 2rem;
+border-radius: var(--radius);
+text-align: center;
+transition: var(--transition);
+cursor: pointer;
+margin-bottom:30px;
+}
+
+.skill-card:hover {
+transform: scale(1.05);
+box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+.skill-card i {
+font-size: 3rem;
+color: var(--primary);
+margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+margin-bottom: 0.8rem;
+}
+
+.projects-grid {  
+        display: grid;  
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+        gap: 30px;  
+    }  
+
+    .project-card {  
+        background: var(--bg-card);  
+        border-radius: var(--radius);  
+        overflow: hidden;  
+        position: relative;  
+        border: 1px solid rgba(76, 175, 80, 0.05);  
+        transition: var(--transition);  
+         margin:30px;  
+    }  
+
+    .project-card:hover {  
+        transform: translateY(-5px);  
+        box-shadow: var(--shadow);  
+    }  
+
+    .image {  
+        width: 100%;  
+        height: 220px;  
+           
+        background: linear-gradient(135deg, #1a1a2e, #2a2a4a);    
+        font-size: 3rem;  
+        color: var(--primary);  
+        position: relative;  
+        padding: 20px;  
+    }  
+
+.project-card:hover .image {  
+transform: scale(1.05);
+
+}
+
+.image{
+transition: transform .3s;
+object-fit: cover;
+}
+
+.bottom-3 {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.85);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+opacity: 0;
+transition: opacity 0.4s ease;
+}
+
+ 
+
+.project-card{
+position: relative;
+}
+
+.bottom-3:hover {
+background: #fff;
+color: rgb(38, 0, 255);
+transform: scale(1.05);
+
+}
+
+.project-card:hover .bottom-3 {  
+        opacity: 1;  
+    }
+
+.skills-section,
+.projects-section,
+.contact-section {
+animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.projects-section {
+animation-delay: 0.1s;
+}
+
+.contact-section {
+text-align: center;
+background: rgba(26, 26, 46, 0.5);
+border-radius: var(--radius);
+margin-top: 2rem;
+}
+
+.contact-links {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin: 2rem 0;
+}
+
+.contact-links a {
+color: var(--text);
+text-decoration: none;
+transition: var(--transition);
+font-size: 1.1rem;
+}
+
+.contact-links a:hover {
+color: var(--primary);
+transform: translateY(-3px);
+}
+
+.footer-note {
+margin-top: 3rem;
+font-size: 0.85rem;
+opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+.nav-links {
+gap: 1rem;
+}
+.hero-title {
+font-size: 2rem;
+}
+.hero-subtitle {
+font-size: 1.3rem;
+}
+.skills-grid, .projects-grid {
+grid-template-columns: 1fr;
+}
+}
+@supports (animation-timeline: view()) {
+.skills-section,
+.projects-section,
+.contact-section {
+animation: fadeInUp 0.8s ease-out both;
+animation-timeline: view();
+animation-range: entry 0% entry 30%;
+}
+}
+
+  </style>  
+  </head>  
+<body>  
+   <nav class="navbar">  
+        <div class="container">  
+            <a href="#" class="logo">My<span>Portfolio</span></a>  
+            <ul class="nav-links">  
+                <li><a href="#home" class="nav-link">Home</a></li>  
+                <li><a href="#skills" class="nav-link">Skills</a></li>  
+                <li><a href="#projects" class="nav-link">Projects</a></li>  
+                <li><a href="#contact" class="nav-link">Contact</a></li>  
+            </ul>  
+        </div>  
+    </nav>  <section class="hero" id="home">  
+    <div class="hero-content">  
+        <h1 class="hero-title">Hello, I am <span class="highlight">Saja</span></h1>  
+        <p class="hero-subtitle">Front-End Developer</p>  
+        <p class="hero-description">  
+            I create beautiful, responsive, and animated web experiences using modern CSS techniques.  
+        </p>  
+        <div class="hero-bottom">  
+            <a href="#projects" class="bottom-1">View My Work</a>  
+            <a href="#contact" class="bottom-2">Get In Touch</a>  
+        </div>  
+    </div>  
+</section>
+
+   <section class="skills-section" id="skills">  
+        <div class="container">  
+            <h2 class="section-title">My Skills</h2>  
+            <div class="skills-grid">  
+                <div class="skill-card">  
+                    
+                    <h3>🖥 <br> HTML5</h3>  
+                    <p>Semantic markup and accessibility</p>  
+                </div>  
+                <div class="skill-card">  
+                   
+                    <h3> 🎨 <br>CSS3</h3>  
+                    <p>Animations, Grid, Flexbox</p>  
+                </div>  
+                <div class="skill-card">  
+                     
+                    <h3>⚡ <br>JavaScript</h3>  
+                    <p>ES6+, DOM manipulation</p>  
+                </div>  
+                <div class="skill-card">  
+                     
+                    <h3> 🛠 <br>Git & GitHub</h3>  
+                    <p>Version control and collaboration</p>  
+                </div>  
+                <div class="skill-card">  
+                    <h3>📱<br>Responsive Design</h3>  
+                    <p>Mobile-first approach</p>  
+                </div>  
+                <div class="skill-card">  
+                     
+                    <h3>🌟<br>Bootstrap</h3>  
+                    <p>Rapid UI development</p>  
+                </div>  
+            </div>  
+        </div>  
+    </section>  
+          <!---==================================================---->   <section class="projects-section" id="projects">  
+        <div class="container">  
+            <h2 class="section-title">My Projects</h2>  
+            <div class="projects-grid">  
+ <!-- Project 3: 1-Commerce Dashboard -->  
+                <div class="project-card">  
+                    <div class="project-info">  
+                      <div>   
+                        <img class="image" src="content://media/external/downloads/49537" alt="logo">  
+                      </div>  
+                        <h3>E-Commerce Dashboard</h3>  
+                        <p>HTML, CSS, JavaScript</p>  
+                       <a href="#" class="bottom-3">View Project</a>                             
+                    </div>  
+                </div>  <div class="project-card">  
+                <div class="project-info">  
+                  <div>   
+                    <img class="image" src="content://media/external/downloads/49536" alt="logo">  
+                  </div>                        
+                    <h3>Weather Application</h3>  
+                    <p>JavaScript, API Integration</p>  
+                    <a href="#" class="bottom-3">View Project</a>  
+                </div>  
+              
+            </div>  
+            <div class="project-card">  
+                <div class="project-info">  
+                  <div>   
+                    <img class="image" src="content://media/external/downloads/49538" alt="logo">  
+                  </div>  
+                    <h3>Mobile App Landing</h3>  
+                    <p>HTML, CSS, Bootstrap</p>  
+                        <a href="#" class="bottom-3">View Project</a>                         
+                </div>  
+            </div>  
+              
+                        </div>         
+</section>
+
+  <section class="contact-section" id="contact">  
+        <div class="container">  
+            <h2>Get In Touch</h2>  
+            <p>Feel free to reach out for collaborations or just a friendly chat</p>  
+            <div class="contact-links">  
+                <a href="mailto:your@email.com"><i class="contact"></i> Email</a>  
+                <a href="GitHub"><i class="contact"></i> GitHub</a>  
+                <a href="LinkedIn"><i class="contact"></i> LinkedIn</a>  
+                <a href="Twitter"><i class="contact"></i> Twitter</a>  
+            </div>  
+        </div>  
+    </section>  <div class="footer-note">  
+    <div class="container">  
+        Built with pure CSS animations | Al-Aqsa University - Web Development 1  
+        <br>  
+                <span>🖐️</span>  2026  
+    </div>  
+</div>
+
+</body>  
+</html>  
